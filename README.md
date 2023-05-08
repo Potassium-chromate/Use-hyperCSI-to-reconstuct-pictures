@@ -101,41 +101,15 @@ The below is the best we have tried:
 | :----:       | :----------:        | :---:        |
 | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2060%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2060%25/Inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2060%25/Ground%20truth.png?raw=true" alt="Corrupt Image" width="300"/> |
 
+| Original size| Masked Column Count | Corrupt Rate | RMSE | F_norm |
+| :----:       | :----------:        | :---:        |:----:|:----:  |
+| 183x22500    | 14120               |   62.75%     | 0.020|  51.54 |
 
-| category  | quantity| corrupt rate | Avg RMSE  | params used |
-| :----     | :----:  | :----------: | ---:  |----------------:|
-| train     | 37      | 0            |       |                 |
-| test      | 152     | 0.7          |       |                 |
-| total     | 183     | 0.56         | 0.039 |   9,592,497     |
+| Corrupt| Inpaint | Ground truthe | 
+| :----:       | :----------:        | :---:        |
+| <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2063%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2063%25/Inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2063%25/Ground%20Truth.png?raw=true" alt="Corrupt Image" width="300"/> |
 
-| category  | quantity| corrupt rate | Avg RMSE  | params used |
-| :----     | :----:  | :----------: | ---:  |----------------:|
-| train     | 37      | 0            |       |                 |
-| test      | 152     | 0.8          |       |                 |
-| total     | 183     | 0.64         | 0.025 |   9,592,497     |
 
-| category  | quantity| corrupt rate | Avg RMSE  | params used |  
-| :----     | :----:  | :----------: | ---:  |----------------:|
-| train     | 28      | 0            |       |                 |
-| test      | 155     | 0.8          |       |                 |
-| total     | 183     | 0.68         | 0.044 |   9,592,497     |
 
-| category  | quantity| corrupt rate | Avg RMSE  | params used |   
-| :----     | :----:  | :----------: | ---:  |----------------:|
-| train     | 28      | 0            |       |                 |
-| test      | 155     | 0.85         |       |                 |
-| total     | 183     | 0.72         | 0.079 |   9,592,497     |
-
-| category  | quantity| corrupt rate | Avg RMSE  | params used |   
-| :----     | :----:  | :----------: | ---:  |----------------:|
-| train     | 19      | 0            |       |                 |
-| test      | 164     | 0.9          |       |                 |
-| total     | 183     | 0.81         | 0.024 |   10,069,313    |
-
-| category  | quantity| corrupt rate | Avg RMSE  | params used |   
-| :----     | :----:  | :----------: | ---:  |----------------:|
-| train     | 15      | 0            |       |                 |
-| test      | 168     | 0.95         |       |                 |
-| total     | 183     | 0.874        | 0.034 |   10,069,313    |
 
 
