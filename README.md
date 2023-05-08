@@ -87,7 +87,7 @@ The below is the best we have tried:
 | :----:       | :----------:        | :---:        |:----:|:----:  |
 | 183x22500    | 12114               |   53.84%     | 0.015|  31.123|
 
-| Corrupt| Inpaint | Ground truthe | 
+| Corrupt| Inpaint | Ground truth | 
 | :----:       | :----------:        | :---:        |
 | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/ground%20truth.png?raw=true" alt="Corrupt Image" width="300"/> |
 
@@ -97,7 +97,7 @@ The below is the best we have tried:
 | :----:       | :----------:        | :---:        |:----:|:----:  |
 | 183x22500    | 0                   |   0    %     | 0.005|  9.6354|
 
-| Corrupt| Inpaint | Ground truthe | 
+| Corrupt| Inpaint | Ground truth | 
 | :----:       | :----------:        | :---:        |
 | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%200%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%200%25/Inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/ground%20truth.png?raw=true" alt="Corrupt Image" width="300"/> |
 
@@ -106,7 +106,7 @@ The below is the best we have tried:
 | :----:       | :----------:        | :---:        |:----:|:----:  |
 | 183x22500    | 13597               |   60.43%     | 0.019|  39.271|
 
-| Corrupt| Inpaint | Ground truthe | 
+| Corrupt| Inpaint | Ground truth | 
 | :----:       | :----------:        | :---:        |
 | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2060%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2060%25/Inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2060%25/Ground%20truth.png?raw=true" alt="Corrupt Image" width="300"/> |
 
@@ -114,7 +114,7 @@ The below is the best we have tried:
 | :----:       | :----------:        | :---:        |:----:|:----:  |
 | 183x22500    | 14120               |   62.75%     | 0.020|  51.54 |
 
-| Corrupt| Inpaint | Ground truthe | 
+| Corrupt| Inpaint | Ground truth | 
 | :----:       | :----------:        | :---:        |
 | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2063%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2063%25/Inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2063%25/Ground%20Truth.png?raw=true" alt="Corrupt Image" width="300"/> |
 
@@ -122,7 +122,7 @@ The below is the best we have tried:
 | :----:       | :----------:        | :---:        |:----:|:----:  |
 | 183x22500    | 15797               |   70.20%     | 0.332|  673.9 |
 
-| Corrupt| Inpaint | Ground truthe | 
+| Corrupt| Inpaint | Ground truth | 
 | :----:       | :----------:        | :---:        |
 | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2070%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2070%25/Inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2070%25/Ground%20Truth.png?raw=true" alt="Corrupt Image" width="300"/> |
 
