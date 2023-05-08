@@ -1,4 +1,4 @@
-function [new_vertex,A,S,time] = Hyper_SCI(data,vertex,C,means,adjust_factor)
+function [new_vertex,A,S,time] = Hyper_CSI(data,vertex,C,means,adjust_factor)
 
 
 % Start the timer
