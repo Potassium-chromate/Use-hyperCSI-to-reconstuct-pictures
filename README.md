@@ -126,9 +126,9 @@ The below is the best we have tried:
 | :----:       | :----------:        | :---:        |
 | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2070%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2070%25/Inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2070%25/Ground%20Truth.png?raw=true" alt="Corrupt Image" width="300"/> |
 
-| Original size| Masked Column Count | Corrupt Rate | RMSE | F_norm |
-| :----:       | :----------:        | :---:        |:----:|:----:  |
-| 183x22500    | 12114               |   53.84%     | 0.064|  **131.51** |
+| Original size| Masked Column Count | Corrupt Rate | RMSE | F_norm | adjust rate |
+| :----:       | :----------:        | :---:        |:----:|:----:  | :----------:|
+| 183x22500    | 12114               |   53.84%     | 0.064|  **131.51** | **0.9**|
 
 | Corrupt| Inpaint | Ground truth | 
 | :----:       | :----------:        | :---:        |
