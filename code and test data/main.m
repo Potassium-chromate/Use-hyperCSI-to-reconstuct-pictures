@@ -25,7 +25,6 @@ t0 = clock;
 [row, col] = size(data);
 purest_vertex = SPA(data, col, row + 1);
 [Y_vertex, a, S, time] = Hyper_SCI(data, purest_vertex, C, means, 2);
-% Calculate processing time
 time = etime(clock,t0);
 
 % Create a temporary matrix to store the reconstructed data
