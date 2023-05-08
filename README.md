@@ -1,7 +1,7 @@
 # Hyperspectral Image Inpainting
 
 ## Purposes
-This is a Python script to inpaint hyperspectral images of size (150,150,183) using a U-Net based architecture.
+The purpose of this repository is to provide a MATLAB implementation of a hyperspectral image inpainting algorithm, which combines Principal Component Analysis (PCA), Successive Projection Algorithm (SPA), and Hyper_SCI to improve the performance of image inpainting tasks. This implementation is suitable for researchers and practitioners working with hyperspectral images who require an efficient method for image inpainting and restoration.
 
 ## Requirements
 
@@ -13,17 +13,13 @@ This is a Python script to inpaint hyperspectral images of size (150,150,183) us
 
 ## Usage
 
-1. Make sure you have the required libraries installed.
+1. `PCA.m`: Function to compress and decompress a 3D matrix using Principal Component Analysis (PCA).
 
-2. Change the `file_name` variable to the path of your .mat file containing the hyperspectral data.
+2. `SPA.m`: Successive Projection Algorithm (SPA) for finding the purest pixels in a hyperspectral image.
 
-```python
-file_name  = "path/to/your/data.mat"
-```
-3. Run the script. This will load the hyperspectral data, preprocess the images, create a model, and train it on the provided dataset. After training, the script will show the results for the test images including the corrupted image, predicted image, and ground truth.  
-```python 
-python hyperspectral_inpainting.py
-```
+3. `Hyper_SCI.m`: Implementation of Hyper_SCI algorithm for image inpainting.
+
+4. `main.m`: The main script that demonstrates the usage of PCA, SPA, and Hyper_SCI for hyperspectral image inpainting.
 
 ## Preprocessing
 The input hyperspectral images have a shape of (150, 150). In order to perform convolution and upsampling operations effectively, each side of the image should be a multiple of 8. This is because the specific architecture used in this code involves multiple downsampling (using MaxPooling2D) and upsampling (using UpSampling2D) layers, which require dimensions that are divisible by the downsampling/upsampling factors.
