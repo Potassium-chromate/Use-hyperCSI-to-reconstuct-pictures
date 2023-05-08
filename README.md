@@ -88,6 +88,13 @@ The below is the best we have tried:
 | 183x22500    | 12114               |   53.84%     | 0.015|  31.123|
 
 
+| Corrupt| Inpaint | Ground truthe | 
+| :----:       | :----------:        | :---:        |
+| <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/ground%20truth.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |
+
+
+
+
 ### Combined Loss Function
 The combined loss function used in this script is a linear combination of Mean Squared Error (MSE) and Structural Similarity Index Measure (SSIM). This helps the model to focus on both pixel-level reconstruction as well as preserving structural information in the images. The weighting factor `alpha` can be adjusted to control the trade-off between MSE and SSIM.
 
