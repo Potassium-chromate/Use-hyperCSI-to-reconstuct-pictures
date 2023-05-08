@@ -1,7 +1,7 @@
 # Hyperspectral Image Inpainting
 
 ## Purposes
-The purpose of this repository is to provide a MATLAB implementation of a hyperspectral image inpainting algorithm, which combines Principal Component Analysis (PCA), Successive Projection Algorithm (SPA), and Hyper_SCI to improve the performance of image inpainting tasks. This implementation is suitable for researchers and practitioners working with hyperspectral images who require an efficient method for image inpainting and restoration.
+The purpose of this repository is to provide a MATLAB implementation of a hyperspectral image inpainting algorithm, which combines Principal Component Analysis (PCA), Successive Projection Algorithm (SPA), and Hyper_CSI to improve the performance of image inpainting tasks. This implementation is suitable for researchers and practitioners working with hyperspectral images who require an efficient method for image inpainting and restoration.
 
 ## Requirements
 
@@ -14,12 +14,12 @@ The purpose of this repository is to provide a MATLAB implementation of a hypers
 
 2. `SPA.m`: Successive Projection Algorithm (SPA) for finding the purest pixels in a hyperspectral image.
 
-3. `Hyper_SCI.m`: Implementation of Hyper_SCI algorithm for image inpainting.
+3. `Hyper_CSI.m`: Implementation of Hyper_CSI algorithm for image inpainting.
 
-4. `main.m`: The main script that demonstrates the usage of PCA, SPA, and Hyper_SCI for hyperspectral image inpainting.
+4. `main.m`: The main script that demonstrates the usage of PCA, SPA, and Hyper_CSI for hyperspectral image inpainting.
 
 ## Preprocessing
-In the `main_script.m`, the original hyperspectral image data is first loaded and reshaped into a 2D matrix. The purpose of reshaping is to transform the 3D hyperspectral image data into a 2D matrix, where each column represents a pixel and each row represents a spectral band. This makes it easier to perform the subsequent PCA, SPA, and Hyper_SCI operations.
+In the `main_script.m`, the original hyperspectral image data is first loaded and reshaped into a 2D matrix. The purpose of reshaping is to transform the 3D hyperspectral image data into a 2D matrix, where each column represents a pixel and each row represents a spectral band. This makes it easier to perform the subsequent PCA, SPA, and Hyper_CSI operations.
 
 Next, the script masks the original data by removing the columns (pixels) with all zero values:  
 ``` matlab
@@ -30,7 +30,7 @@ In this step, `cols_to_masked` contains the indices of columns (pixels) with all
 
 
 ## Algorithm Overview
-The provided MATLAB code implements a hyperspectral image inpainting algorithm that combines PCA, SPA, and Hyper_SCI techniques to recover missing or corrupted data in the image. Here's a brief overview of the main steps in the algorithm:
+The provided MATLAB code implements a hyperspectral image inpainting algorithm that combines PCA, SPA, and Hyper_CSI techniques to recover missing or corrupted data in the image. Here's a brief overview of the main steps in the algorithm:
 1. **PCA (Principal Component Analysis):** The hyperspectral data is compressed by applying PCA, which reduces the dimensionality of the data while retaining most of the information. This step allows for more efficient processing in the subsequent stages.
 ``` matlab
 [data,dec_data,C,means] = PCA(X_c,4);
@@ -39,11 +39,11 @@ The provided MATLAB code implements a hyperspectral image inpainting algorithm t
 ``` matlab
 purest_vertex = SPA(data,col,row+1);
 ```
-3. **Hyper_SCI (Hyperspectral Subspace Constrained Identification):** Given the endmembers found by SPA, Hyper_SCI is applied to unmix the data and estimate the abundance of each endmember in each pixel. This step recovers the missing or corrupted data in the hyperspectral image.
+3. **Hyper_CSI (Hyperspectral Subspace Constrained Identification):** Given the endmembers found by SPA, Hyper_CSI is applied to unmix the data and estimate the abundance of each endmember in each pixel. This step recovers the missing or corrupted data in the hyperspectral image.
 ``` matlab
-[Y_vertex,a,S,time] = Hyper_SCI(data,purest_vertex,C,means,1);
+[Y_vertex,a,S,time] = Hyper_CSI(data,purest_vertex,C,means,1);
 ```
-4. **Reconstruction and inpainting:** After applying Hyper_SCI, the reconstructed data is combined with the original (masked) data. The missing or corrupted data is then inpainted by interpolating neighboring pixels' values.
+4. **Reconstruction and inpainting:** After applying Hyper_CSI, the reconstructed data is combined with the original (masked) data. The missing or corrupted data is then inpainted by interpolating neighboring pixels' values.
 ``` matlab
 for i = 1:dim(2)
     if temp(:,i) == 0;
@@ -59,7 +59,7 @@ RMSE = sqrt(mean(squared_differences(:)));
 
 
 ## Customization
-In this repository, you can easily customize the inpainting algorithm by adjusting the `adjust_factor` variable in the `Hyper_SCI` function call. Changing the `adjust_factor` will affect the convergence of the hyperplanes towards the center of the data cloud, which in turn can impact the overall performance of the algorithm.
+In this repository, you can easily customize the inpainting algorithm by adjusting the `adjust_factor` variable in the `Hyper_CSI` function call. Changing the `adjust_factor` will affect the convergence of the hyperplanes towards the center of the data cloud, which in turn can impact the overall performance of the algorithm.
 
 ## Additional Information
 ### Test Data
@@ -89,7 +89,7 @@ The below is the best we have tried:
 
 | Corrupt| Inpaint | Ground truth | 
 | :----:       | :----------:        | :---:        |
-| <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/ground%20truth.png?raw=true" alt="Corrupt Image" width="300"/> |
+| <img src="https://github.com/Potassium-chromate/Use-hyperCSI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/ground%20truth.png?raw=true" alt="Corrupt Image" width="300"/> |
 
 ## Futher test
 
