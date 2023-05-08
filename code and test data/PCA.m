@@ -14,10 +14,4 @@ A_compress = top_eig_vec' * A_re_centered;
 % Decompress the image
 A_decompress = top_eig_vec * A_compress + row_means;
 
-
-% Plot the compressed image
-X = A_compress(1, :);
-Y = A_compress(2, :);
-plot(X,Y)
-%hold on;
 end
