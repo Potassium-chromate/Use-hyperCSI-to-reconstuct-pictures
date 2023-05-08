@@ -79,6 +79,15 @@ mask(:, cols_to_masked) = 0;
 
 After applying both masks, we obtain a masked version of the original hyperspectral data, which can be used to test and evaluate the inpainting algorithm's performance. By comparing the inpainted data with the original data, we can assess the quality of the reconstruction and the effectiveness of the algorithm.
 
+The below is the best we have tried:   
+- **Number of endmember:** 5
+- **adjust_factor:** 2
+
+| Original size| Masked Column Count | Corrupt Rate | RMSE | F_norm |
+| :----:       | :----------:        | :---:        |:----:|:----:  |
+| 183x22500    | 12114               |   53.84%     | 0.015|  31.123|
+
+
 ### Combined Loss Function
 The combined loss function used in this script is a linear combination of Mean Squared Error (MSE) and Structural Similarity Index Measure (SSIM). This helps the model to focus on both pixel-level reconstruction as well as preserving structural information in the images. The weighting factor `alpha` can be adjusted to control the trade-off between MSE and SSIM.
 
