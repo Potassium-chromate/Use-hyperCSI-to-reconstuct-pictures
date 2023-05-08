@@ -62,13 +62,22 @@ RMSE = sqrt(mean(squared_differences(:)));
 In this repository, you can easily customize the inpainting algorithm by adjusting the `adjust_factor` variable in the `Hyper_SCI` function call. Changing the `adjust_factor` will affect the convergence of the hyperplanes towards the center of the data cloud, which in turn can impact the overall performance of the algorithm.
 
 ## Additional Information
-### Model Architecture
-The U-Net architecture used in this script consists of an encoder (contraction) path and a decoder (expansion) path.
-- **Encoder** (contraction) path: This path consists of 3 blocks. Each block has 2 Convolutional layers followed by a Batch Normalization layer and a Leaky ReLU activation function. The output of each block is then downsampled using a MaxPooling2D layer.
-- **Bottom layer**: After the encoder, there is a bottom layer containing 3 Convolutional layers, each followed by a Batch Normalization layer and a Leaky ReLU activation function.
-- **Decoder (expansion) path**: The decoder path consists of 3 blocks. Each block has an UpSampling2D layer followed by a Convolutional layer and a concatenation operation with the corresponding layer from the encoder path. This is followed by 2 Convolutional layers, each with a Batch Normalization layer and a Leaky ReLU activation function.
-- **Output layer**: The output layer is a Conv2D layer with a sigmoid activation function to produce the inpainted image.
-![Alt Text](https://github.com/Potassium-chromate/Hyperspectral-Image-Inpainting/blob/main/pictures/U-net.png)
+### Test Data
+The original hyperspectral data has dimensions 183x22500. To create a masked version of this data for testing purposes, we apply two masks to remove specific columns of data.
+
+First, we remove every second column in the dataset by setting the columns to zero:
+``` matlab
+cols_to_masked = 2:2:dim(2)-2;
+mask(:, cols_to_masked) = 0;
+```
+
+Then, we further mask the data by removing every 13th column:
+``` matlab
+cols_to_masked = 2:13:dim(2)-2;
+mask(:, cols_to_masked) = 0;
+```
+
+After applying both masks, we obtain a masked version of the original hyperspectral data, which can be used to test and evaluate the inpainting algorithm's performance. By comparing the inpainted data with the original data, we can assess the quality of the reconstruction and the effectiveness of the algorithm.
 
 ### Combined Loss Function
 The combined loss function used in this script is a linear combination of Mean Squared Error (MSE) and Structural Similarity Index Measure (SSIM). This helps the model to focus on both pixel-level reconstruction as well as preserving structural information in the images. The weighting factor `alpha` can be adjusted to control the trade-off between MSE and SSIM.
