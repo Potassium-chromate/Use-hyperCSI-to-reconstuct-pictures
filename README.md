@@ -87,41 +87,20 @@ The below is the best we have tried:
 | :----:       | :----------:        | :---:        |:----:|:----:  |
 | 183x22500    | 12114               |   53.84%     | 0.015|  31.123|
 
-
 | Corrupt| Inpaint | Ground truthe | 
 | :----:       | :----------:        | :---:        |
 | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/ground%20truth.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |
 
-
-
-
-### Combined Loss Function
-The combined loss function used in this script is a linear combination of Mean Squared Error (MSE) and Structural Similarity Index Measure (SSIM). This helps the model to focus on both pixel-level reconstruction as well as preserving structural information in the images. The weighting factor `alpha` can be adjusted to control the trade-off between MSE and SSIM.
-
-### Potential Improvements
-- Experiment with different model architectures or pre-trained models to improve inpainting performance.
-- Adjust the corruption level and augmentation factor to create a more diverse set of training and testing samples.
-- Perform data normalization or other preprocessing techniques to improve model performance.
-- Implement early stopping or learning rate scheduling to improve training efficiency and prevent overfitting.
-- Experiment with different loss functions or combination of loss functions to further optimize the model's performance.
-
-### Recover rate
-- **Recovery rate**:  that can describe how much data has been recovered in the inpainting process.  
-- Recovery rate = `val_ratio` *  `corruption_level` * 100  
-- In the example, Recovery rate = 0.65 * 0.65 * 100 = 42.25%   
-
-## Result
-![Alt Text](https://github.com/Potassium-chromate/Hyperspectral-Image-Inpainting/blob/main/pictures/Result%201.png)
-![Alt Text](https://github.com/Potassium-chromate/Hyperspectral-Image-Inpainting/blob/main/pictures/Result%202.png)
-![Alt Text](https://github.com/Potassium-chromate/Hyperspectral-Image-Inpainting/blob/main/pictures/Result%203.png)
-
 ## Futher test
 
-| category  | quantity| corrupt rate | Avg RMSE  | params used |
-| :----     | :----:  | :----------: | ---:  |----------------:|
-| train     | 55      | 0            |       |                 |
-| test      | 128     | 0.7          |       |                 |
-| total     | 183     | 0.49         | 0.068 | 8,053,105       |
+| Original size| Masked Column Count | Corrupt Rate | RMSE | F_norm |
+| :----:       | :----------:        | :---:        |:----:|:----:  |
+| 183x22500    | 13597               |   60.43%     | 0.019|  39.271|
+
+| Corrupt| Inpaint | Ground truthe | 
+| :----:       | :----------:        | :---:        |
+| <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2060%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2060%25/Inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2060%25/Ground%20truth.png?raw=true" alt="Corrupt Image" width="300"/> |
+
 
 | category  | quantity| corrupt rate | Avg RMSE  | params used |
 | :----     | :----:  | :----------: | ---:  |----------------:|
