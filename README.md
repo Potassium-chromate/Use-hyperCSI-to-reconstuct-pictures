@@ -5,11 +5,8 @@ The purpose of this repository is to provide a MATLAB implementation of a hypers
 
 ## Requirements
 
-- Python 3
-- Tensorflow 2.x
-- Scipy
-- NumPy
-- Matplotlib
+- MATLAB R2020a or later
+- Hyperspectral image dataset
 
 ## Usage
 
@@ -22,20 +19,44 @@ The purpose of this repository is to provide a MATLAB implementation of a hypers
 4. `main.m`: The main script that demonstrates the usage of PCA, SPA, and Hyper_SCI for hyperspectral image inpainting.
 
 ## Preprocessing
-The input hyperspectral images have a shape of (150, 150). In order to perform convolution and upsampling operations effectively, each side of the image should be a multiple of 8. This is because the specific architecture used in this code involves multiple downsampling (using MaxPooling2D) and upsampling (using UpSampling2D) layers, which require dimensions that are divisible by the downsampling/upsampling factors.
+In the `main_script.m`, the original hyperspectral image data is first loaded and reshaped into a 2D matrix. The purpose of reshaping is to transform the 3D hyperspectral image data into a 2D matrix, where each column represents a pixel and each row represents a spectral band. This makes it easier to perform the subsequent PCA, SPA, and Hyper_SCI operations.
 
-To achieve this, we pad each side of the input image by 1 pixel, resulting in a new image shape of (152, 152). Padding is done using the `np.pad()` function with a `pad_width` of 1 and a constant value of 0. This ensures that the dimensions of the image are compatible with the convolution and upsampling operations in the model while minimizing the impact of padding on the inpainting process.
+Next, the script masks the original data by removing the columns (pixels) with all zero values:  
+``` matlab
+cols_to_masked = find(all(X_c == 0));
+X_c(:,cols_to_masked) =[];
+```
+In this step, `cols_to_masked` contains the indices of columns (pixels) with all zero values, and these columns are removed from the reshaped data matrix `X_c`. This masking operation is essential to focus on the relevant pixels in the hyperspectral image and improve the efficiency of the subsequent inpainting algorithm.
+
 
 ## Algorithm Overview
-The script is based on a U-Net architecture, which is commonly used for image inpainting tasks. The algorithm performs the following steps:
-1. Load and preprocess the hyperspectral data.
-2. Create and compile the U-Net model with a custom combined loss function (Mean Squared Error and Structural Similarity Index Measure).
-3. Split the hyperspectral data into training and testing sets.
-4. Add noise to the training and testing images.
-5. Train the model on the corrupted training images.
-6. Test the model on the corrupted test images, and compare the predictions with the ground truth.
-7. Display the results for the test images and compute the Root Mean Squared Error (RMSE) for each test image.
-![Alt Text](https://github.com/Potassium-chromate/Hyperspectral-Image-Inpainting/blob/main/pictures/Process.png)  
+The provided MATLAB code implements a hyperspectral image inpainting algorithm that combines PCA, SPA, and Hyper_SCI techniques to recover missing or corrupted data in the image. Here's a brief overview of the main steps in the algorithm:
+1. **PCA (Principal Component Analysis):** The hyperspectral data is compressed by applying PCA, which reduces the dimensionality of the data while retaining most of the information. This step allows for more efficient processing in the subsequent stages.
+``` matlab
+[data,dec_data,C,means] = PCA(X_c,4);
+```
+2. **SPA (Successive Projection Algorithm):** SPA is used to identify the purest pixels in the compressed data, which are considered as endmembers. These endmembers are important for the unmixing process in the next step.
+``` matlab
+purest_vertex = SPA(data,col,row+1);
+```
+3. **Hyper_SCI (Hyperspectral Subspace Constrained Identification):** Given the endmembers found by SPA, Hyper_SCI is applied to unmix the data and estimate the abundance of each endmember in each pixel. This step recovers the missing or corrupted data in the hyperspectral image.
+``` matlab
+[Y_vertex,a,S,time] = Hyper_SCI(data,purest_vertex,C,means,1);
+```
+4. **Reconstruction and inpainting:** After applying Hyper_SCI, the reconstructed data is combined with the original (masked) data. The missing or corrupted data is then inpainted by interpolating neighboring pixels' values.
+``` matlab
+for i = 1:dim(2)
+    if temp(:,i) == 0;
+        temp(:,i) = (temp(:,i-1)+temp(:,i+1))/2;
+    end
+end
+```
+5.**Visualization and evaluation:** The inpainted hyperspectral image is visualized and compared to the ground truth image. Additionally, the algorithm's performance is assessed by computing the RMSE (Root Mean Square Error) between the inpainted and original images.
+``` matlab
+differences = temp - X;
+RMSE = sqrt(mean(squared_differences(:)));
+```
+
 
 ## Customization
 To adjust the training and testing data, you can modify the following variables:
@@ -58,8 +79,6 @@ To adjust the number of training epochs and batch size, you can modify the follo
 ```python
 model.fit(train_corrupt, train_complete, epochs=15, batch_size=32, verbose=1)
 ```
-
-
 
 ## Additional Information
 ### Model Architecture
