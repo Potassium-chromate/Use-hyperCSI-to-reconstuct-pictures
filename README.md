@@ -136,7 +136,7 @@ The below is the best we have tried:
 | :----:       | :----------:        | :---:        |
 | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/0.9%20adjust%20factor/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/0.9%20adjust%20factor/Inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/0.9%20adjust%20factor/Ground%20Truth.png?raw=true" alt="Corrupt Image" width="300"/> |
 
--Conclusion: the performance sucks!
+- Conclusion: the performance sucks!
 
 ## Abundance maps
 
