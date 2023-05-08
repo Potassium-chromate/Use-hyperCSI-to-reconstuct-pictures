@@ -89,9 +89,18 @@ The below is the best we have tried:
 
 | Corrupt| Inpaint | Ground truthe | 
 | :----:       | :----------:        | :---:        |
-| <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/ground%20truth.png?raw=true" alt="Corrupt Image" width="300"/> |
+| <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%200%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%200%25/Inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%200%25/Ground%20Truth.png?raw=true" alt="Corrupt Image" width="300"/> |
 
 ## Futher test
+
+| Original size| Masked Column Count | Corrupt Rate | RMSE | F_norm |
+| :----:       | :----------:        | :---:        |:----:|:----:  |
+| 183x22500    | 0                   |   0    %     | 0.005|  9.6354|
+
+| Corrupt| Inpaint | Ground truthe | 
+| :----:       | :----------:        | :---:        |
+| <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/Corrupt.png?raw=true" alt="Corrupt Image" width="300"/>  | <img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/inpaint.png?raw=true" alt="Corrupt Image" width="300"/> |<img src="https://github.com/Potassium-chromate/Use-hyperSCI-to-reconstuct-pictures/blob/main/picture/Corrupt%2053%25/Corrupt%2053%25/ground%20truth.png?raw=true" alt="Corrupt Image" width="300"/> |
+
 
 | Original size| Masked Column Count | Corrupt Rate | RMSE | F_norm |
 | :----:       | :----------:        | :---:        |:----:|:----:  |
